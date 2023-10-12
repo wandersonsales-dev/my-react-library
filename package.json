@@ -1,12 +1,12 @@
 {
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@wandersonsales-dev"
+    "registry": "https://npm.pkg.github.com/wandersonsales-dev"
   },
   "name": "@wandersonsales-dev/my-react-library",
   "type": "module",
   "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/index.cjs.js",
   "files": [
