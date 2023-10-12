@@ -24,4 +24,4 @@ jobs:
       - name: Publish to npm
         run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.MY_SECRET_FOR_REACT_LIBRARY}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
