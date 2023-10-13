@@ -3,10 +3,11 @@
   "type": "module",
   "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "",
   "main": "dist/index.cjs.js",
   "private": false,
+  "homepage": "http://wandersonsales-dev.github.io/my-react-library",
   "files": [
     "/dist"
   ],
@@ -23,7 +24,9 @@
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "pre-deploy": "npm run build-storybook",
+    "deploy-storybook": "npm run pre-deploy && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -57,6 +60,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^6.0.0",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
