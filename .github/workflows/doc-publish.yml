@@ -13,17 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          version: 0.7.0
+          node-version: '20.x'
 
       - name: Install dependencies
-        run: bun install && bun run prepare
+        run: npm install && npm run prepare
 
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          bun run deploy-storybook -- -u "github-actions-bot <support+actions@github.com>"
+          npm run deploy-storybook -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
