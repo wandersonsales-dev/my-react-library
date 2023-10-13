@@ -24,3 +24,5 @@ jobs:
 
       - name: Publish to Git Pages
         run: npm run deploy-storybook
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
