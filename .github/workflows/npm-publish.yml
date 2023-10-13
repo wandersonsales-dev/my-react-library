@@ -23,6 +23,6 @@ jobs:
         run: bun install && bun run prepare
 
       - name: Publish to npm
-        run: bun npm publish --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
