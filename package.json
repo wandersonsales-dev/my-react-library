@@ -24,7 +24,6 @@
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "npm run build",
     "pre-deploy": "npm run build-storybook",
     "deploy-storybook": "npm run pre-deploy && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true"
   },
