@@ -1,31 +1,32 @@
 {
-  // Specify the environments where the code will run
-  "env": {
-    "jest": true,       // Enable Jest for testing
-    "browser": true     // Enable browser environment
-  },
-
-  // Stop ESLint from searching for configuration in parent folders
   "root": true,
-
-  // Specify the parser for TypeScript (using @typescript-eslint/parser)
-  "parser": "@typescript-eslint/parser", // Leverages TS ESTree to lint TypeScript
-
-  // Add additional rules and configuration options
-  "plugins": ["@typescript-eslint"],
-
-  // Extend various ESLint configurations and plugins
   "extends": [
-    "eslint:recommended",                   // ESLint recommended rules
-    "plugin:react/recommended",             // React recommended rules
-    "plugin:@typescript-eslint/recommended", // TypeScript recommended rules
-    "plugin:@typescript-eslint/eslint-recommended", // ESLint overrides for TypeScript
-    "prettier",                             // Prettier rules
-    "plugin:prettier/recommended",          // Prettier plugin integration
-    "plugin:react-hooks/recommended",       // Recommended rules for React hooks
-    "plugin:storybook/recommended"          // Recommended rules for Storybook
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "ts-react-important-stuff",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
   ],
+  "plugins": ["react-hooks"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
-  }
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "parser": "@babel/eslint-parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "no-throw-literal": "off",
+        "no-unsafe-optional-chaining": "off",
+        "no-async-promise-executor": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "semi": [2, "never"],
+        "quotes": [2, "single"]
+      }
+    }
+  ]
 }

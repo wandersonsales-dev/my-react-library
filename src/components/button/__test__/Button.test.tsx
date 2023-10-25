@@ -1,7 +1,7 @@
 //Button/__test__/Button.test.tsx
 import "@testing-library/jest-dom";
-// import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
+import React from "react";
 import { describe, expect, it } from "vitest";
 import Button from "../Button";
 

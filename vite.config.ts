@@ -24,4 +24,7 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./setupTests.ts",
   },
+  optimizeDeps: {
+    include: ["my-react-library"],
+  }
 });
